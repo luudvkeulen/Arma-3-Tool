@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_home_screen"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="nl.luudvankeulen.arma3tool.HomeScreenActivity">
+
+    <ImageView
+        android:id="@+id/imageView_background"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background" />
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Arma 3 Tool"
+        android:textColor="@android:color/white"
+        android:textSize="50sp" />
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/textViewTitle">
+        <LinearLayout
+            android:id="@+id/scrollLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/weapons"
+                android:layout_width="fill_parent"
+                android:layout_height="75dp"
+                android:layout_below="@id/textViewTitle"
+                android:background="@color/colorPrimaryDark"
+                android:text="Weapons"
+                android:textColor="@android:color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="20dp"
+                android:onClick="onButtonWeaponsClick"/>
+
+            <Button
+                android:id="@+id/maps"
+                android:layout_width="fill_parent"
+                android:layout_height="75dp"
+                android:layout_below="@id/textViewTitle"
+                android:background="@color/colorPrimaryDark"
+                android:fontFamily="sans-serif-medium"
+                android:text="maps"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:onClick="onButtonMapsClick"/>
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>
