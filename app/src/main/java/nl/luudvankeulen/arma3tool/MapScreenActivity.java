@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.ListView;
 
+import nl.luudvankeulen.arma3tool.adapters.MapsAdapter;
+
 public class MapScreenActivity extends AppCompatActivity {
 
     ListView list;
@@ -17,7 +19,7 @@ public class MapScreenActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Maps");
         list = (ListView)findViewById(R.id.maps_list);
-
+        list.setAdapter(new MapsAdapter(getApplicationContext()));
     }
 
     @Override
