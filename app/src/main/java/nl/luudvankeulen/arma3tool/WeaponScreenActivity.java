@@ -4,8 +4,15 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
-public class WeaponScreenActivity extends AppCompatActivity {
+import nl.luudvankeulen.arma3tool.adapters.WeaponsAdapter;
+
+public class WeaponScreenActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
+
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -14,11 +21,19 @@ public class WeaponScreenActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setTitle("Weapons");
+        listView = (ListView)findViewById(R.id.weapon_list);
+        listView.setAdapter(new WeaponsAdapter(getApplicationContext()));
+        listView.setOnItemClickListener(this);
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         finish();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
     }
 }

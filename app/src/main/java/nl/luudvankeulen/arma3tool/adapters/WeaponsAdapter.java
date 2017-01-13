@@ -7,32 +7,27 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import java.util.ArrayList;
-
 import nl.luudvankeulen.arma3tool.R;
-import nl.luudvankeulen.arma3tool.models.MapItem;
+import nl.luudvankeulen.arma3tool.models.WeaponItem;
 
-public class MapsAdapter extends BaseAdapter {
-    ArrayList<MapItem> maps;
+public class WeaponsAdapter extends BaseAdapter {
+    ArrayList<WeaponItem> weapons;
     private static LayoutInflater inflater;
 
-    public MapsAdapter(Context context) {
-        maps = new ArrayList<>();
-        maps.add(new MapItem(R.drawable.altis_icon, R.drawable.altis, "Altis"));
-        maps.add(new MapItem(R.drawable.stratis_icon, R.drawable.stratis, "Stratis"));
-        maps.add(new MapItem(R.drawable.tanoa_icon, R.drawable.tanoa, "Tanoa"));
+    public WeaponsAdapter(Context context) {
+        weapons = new ArrayList<>();
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     @Override
     public int getCount() {
-        return maps.size();
+        return weapons.size();
     }
 
     @Override
     public Object getItem(int i) {
-        return maps.get(i);
+        return weapons.get(i);
     }
 
     @Override
@@ -46,9 +41,9 @@ public class MapsAdapter extends BaseAdapter {
         if (vi == null)
             vi = inflater.inflate(R.layout.map_row, null);
         TextView text = (TextView) vi.findViewById(R.id.text);
-        text.setText(maps.get(i).getName());
+        text.setText(weapons.get(i).getName());
         ImageView image = (ImageView) vi.findViewById(R.id.image);
-        image.setImageResource(maps.get(i).getIconId());
+        image.setImageResource(weapons.get(i).getPictureId());
         return vi;
     }
 }
