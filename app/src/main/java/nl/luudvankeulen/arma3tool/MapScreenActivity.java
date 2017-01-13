@@ -37,6 +37,7 @@ public class MapScreenActivity extends AppCompatActivity implements AdapterView.
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
         Intent intent = new Intent(this, MapDetailsActivity.class);
         intent.putExtra("name", ((MapItem)list.getItemAtPosition(i)).getName());
+        intent.putExtra("id", ((MapItem)list.getItemAtPosition(i)).getPictureId());
         startActivity(intent);
     }
 }

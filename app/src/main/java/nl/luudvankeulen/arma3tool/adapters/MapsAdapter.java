@@ -19,8 +19,9 @@ public class MapsAdapter extends BaseAdapter{
 
     public MapsAdapter(Context context) {
         maps = new ArrayList<>();
-        maps.add(new MapItem(R.drawable.altis_icon, "Altis"));
-        maps.add(new MapItem(R.drawable.stratis_icon, "Stratis"));
+        maps.add(new MapItem(R.drawable.altis_icon, R.drawable.altis, "Altis"));
+        maps.add(new MapItem(R.drawable.stratis_icon, R.drawable.stratis, "Stratis"));
+        maps.add(new MapItem(R.drawable.tanoa_icon, R.drawable.tanoa, "Tanoa"));
         inflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -47,7 +48,7 @@ public class MapsAdapter extends BaseAdapter{
         TextView text = (TextView) vi.findViewById(R.id.text);
         text.setText(maps.get(i).getName());
         ImageView image = (ImageView) vi.findViewById(R.id.image);
-        image.setImageResource(maps.get(i).getPictureId());
+        image.setImageResource(maps.get(i).getIconId());
         return vi;
     }
 }

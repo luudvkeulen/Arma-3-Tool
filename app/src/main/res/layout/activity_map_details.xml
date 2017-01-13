@@ -4,10 +4,19 @@
     android:id="@+id/activity_map_details"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     tools:context="nl.luudvankeulen.arma3tool.MapDetailsActivity">
-    <nl.luudvankeulen.arma3tool.TouchImageView
-        android:id="@+id/touchImageView"
-        android:src="@drawable/altis"
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:indeterminate="true"/>
+
+    <com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView
+        android:id="@+id/subsamplingScaleImageView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+
 </RelativeLayout>
