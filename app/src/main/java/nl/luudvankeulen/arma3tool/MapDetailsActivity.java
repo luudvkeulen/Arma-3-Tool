@@ -25,6 +25,7 @@ public class MapDetailsActivity extends AppCompatActivity {
         //Zoomable image
         SubsamplingScaleImageView subsamplingScaleImageView = (SubsamplingScaleImageView)findViewById(R.id.subsamplingScaleImageView);
         subsamplingScaleImageView.setImage(ImageSource.resource(pictureId));
+        subsamplingScaleImageView.setMinimumDpi(80);
     }
 
     @Override
