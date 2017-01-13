@@ -18,7 +18,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WeaponScreenActivity" />
-        <activity android:name=".MapScreenActivity"></activity>
+        <activity android:name=".MapScreenActivity" />
+        <activity android:name=".MapDetailsActivity"></activity>
     </application>
 
 </manifest>
