@@ -17,6 +17,8 @@ public class WeaponsAdapter extends BaseAdapter {
 
     public WeaponsAdapter(Context context) {
         weapons = new ArrayList<>();
+        weapons.add(new WeaponItem("p07 9mm", R.drawable.poseven));
+        weapons.add(new WeaponItem("4-five .45", R.drawable.fourfive));
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
@@ -39,7 +41,7 @@ public class WeaponsAdapter extends BaseAdapter {
     public View getView(int i, View view, ViewGroup viewGroup) {
         View vi = view;
         if (vi == null)
-            vi = inflater.inflate(R.layout.map_row, null);
+            vi = inflater.inflate(R.layout.weapon_row, null);
         TextView text = (TextView) vi.findViewById(R.id.text);
         text.setText(weapons.get(i).getName());
         ImageView image = (ImageView) vi.findViewById(R.id.image);
