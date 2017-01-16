@@ -1,4 +1,4 @@
-package nl.luudvankeulen.arma3tool;
+package nl.luudvankeulen.arma3tool.enums;
 
 public enum WeaponType {
     HANDGUN("Handgun"),
