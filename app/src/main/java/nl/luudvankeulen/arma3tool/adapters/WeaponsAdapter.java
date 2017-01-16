@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+
 import nl.luudvankeulen.arma3tool.R;
 import nl.luudvankeulen.arma3tool.enums.DLCType;
 import nl.luudvankeulen.arma3tool.enums.WeaponType;
@@ -21,38 +22,11 @@ public class WeaponsAdapter extends BaseAdapter {
 
     public WeaponsAdapter(Context context) {
         weapons = getAllWeapons();
-        //DMR
-        weapons.add(new WeaponItem("ASP-1 Kir", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("CMR-76", R.drawable.pm, WeaponType.DMR, DLCType.APEX));
-        weapons.add(new WeaponItem("Cyrus", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("MAR-10", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("Mk-I EMR", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("Mk14", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("Mk18 ABR", R.drawable.pm, WeaponType.DMR));
-        weapons.add(new WeaponItem("MXM", R.drawable.pm, WeaponType.DMR));
-        weapons.add(new WeaponItem("Rahim", R.drawable.pm, WeaponType.DMR));
-        weapons.add(new WeaponItem("SPAR-17", R.drawable.pm, WeaponType.DMR, DLCType.APEX));
-        //Sniper
-        weapons.add(new WeaponItem("M320 LRR", R.drawable.pm, WeaponType.SNIPER));
-        weapons.add(new WeaponItem("GM6 Lynx", R.drawable.pm, WeaponType.SNIPER));
-        //LMG
-        weapons.add(new WeaponItem("LIM-85", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.APEX));
-        weapons.add(new WeaponItem("Mk200", R.drawable.pm, WeaponType.MACHINEGUN));
-        weapons.add(new WeaponItem("MX SW", R.drawable.pm, WeaponType.MACHINEGUN));
-        weapons.add(new WeaponItem("NAVID", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("SPMG", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
-        weapons.add(new WeaponItem("Zafir", R.drawable.pm, WeaponType.MACHINEGUN));
-        //Launcher
-        weapons.add(new WeaponItem("PCML", R.drawable.pm, WeaponType.LAUNCHER));
-        weapons.add(new WeaponItem("Titan MPRL", R.drawable.pm, WeaponType.LAUNCHER));
-        weapons.add(new WeaponItem("Titan MPRL Compact", R.drawable.pm, WeaponType.LAUNCHER));
-        weapons.add(new WeaponItem("RPG-7", R.drawable.pm, WeaponType.LAUNCHER, DLCType.APEX));
-        weapons.add(new WeaponItem("RPG-42", R.drawable.pm, WeaponType.LAUNCHER));
 
         inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
-    public WeaponsAdapter(Context context, WeaponType weaponType) {
+    public WeaponsAdapter(WeaponType weaponType) {
         switch (weaponType) {
             case NONE:
                 weapons = getAllWeapons();
@@ -62,6 +36,21 @@ public class WeaponsAdapter extends BaseAdapter {
                 break;
             case SMG:
                 weapons = getAllSmgs();
+                break;
+            case RIFLE:
+                weapons = getAllRifles();
+                break;
+            case DMR:
+                weapons = getAllDmrs();
+                break;
+            case LAUNCHER:
+                weapons = getAllLaunchers();
+                break;
+            case SNIPER:
+                weapons = getAllSnipers();
+                break;
+            case MACHINEGUN:
+                weapons = getAllMachineGuns();
                 break;
             default:
                 weapons = new ArrayList<>();
@@ -74,6 +63,10 @@ public class WeaponsAdapter extends BaseAdapter {
         allWeapons.addAll(getAllHandguns());
         allWeapons.addAll(getAllSmgs());
         allWeapons.addAll(getAllRifles());
+        allWeapons.addAll(getAllDmrs());
+        allWeapons.addAll(getAllSnipers());
+        allWeapons.addAll(getAllMachineGuns());
+        allWeapons.addAll(getAllLaunchers());
         return allWeapons;
     }
 
@@ -118,6 +111,49 @@ public class WeaponsAdapter extends BaseAdapter {
         rifles.add(new WeaponItem("TRG 21", R.drawable.trgtwentyone, WeaponType.RIFLE));
         rifles.add(new WeaponItem("Type 115", R.drawable.typeoneonefive, WeaponType.RIFLE, DLCType.APEX));
         return rifles;
+    }
+
+    public ArrayList<WeaponItem> getAllDmrs() {
+        ArrayList<WeaponItem> dmrs = new ArrayList<>();
+        dmrs.add(new WeaponItem("ASP-1 Kir", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
+        dmrs.add(new WeaponItem("CMR-76", R.drawable.pm, WeaponType.DMR, DLCType.APEX));
+        dmrs.add(new WeaponItem("Cyrus", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
+        dmrs.add(new WeaponItem("MAR-10", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
+        dmrs.add(new WeaponItem("Mk-I EMR", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
+        dmrs.add(new WeaponItem("Mk14", R.drawable.pm, WeaponType.DMR, DLCType.MARKSMEN));
+        dmrs.add(new WeaponItem("Mk18 ABR", R.drawable.pm, WeaponType.DMR));
+        dmrs.add(new WeaponItem("MXM", R.drawable.pm, WeaponType.DMR));
+        dmrs.add(new WeaponItem("Rahim", R.drawable.pm, WeaponType.DMR));
+        dmrs.add(new WeaponItem("SPAR-17", R.drawable.pm, WeaponType.DMR, DLCType.APEX));
+        return dmrs;
+    }
+
+    public ArrayList<WeaponItem> getAllSnipers() {
+        ArrayList<WeaponItem> snipers = new ArrayList<>();
+        snipers.add(new WeaponItem("M320 LRR", R.drawable.pm, WeaponType.SNIPER));
+        snipers.add(new WeaponItem("GM6 Lynx", R.drawable.pm, WeaponType.SNIPER));
+        return snipers;
+    }
+
+    public ArrayList<WeaponItem> getAllMachineGuns() {
+        ArrayList<WeaponItem> LMGs = new ArrayList<>();
+        LMGs.add(new WeaponItem("LIM-85", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.APEX));
+        LMGs.add(new WeaponItem("Mk200", R.drawable.pm, WeaponType.MACHINEGUN));
+        LMGs.add(new WeaponItem("MX SW", R.drawable.pm, WeaponType.MACHINEGUN));
+        LMGs.add(new WeaponItem("NAVID", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
+        LMGs.add(new WeaponItem("SPMG", R.drawable.pm, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
+        LMGs.add(new WeaponItem("Zafir", R.drawable.pm, WeaponType.MACHINEGUN));
+        return LMGs;
+    }
+
+    public ArrayList<WeaponItem> getAllLaunchers() {
+        ArrayList<WeaponItem> launchers = new ArrayList<>();
+        launchers.add(new WeaponItem("PCML", R.drawable.pm, WeaponType.LAUNCHER));
+        launchers.add(new WeaponItem("Titan MPRL", R.drawable.pm, WeaponType.LAUNCHER));
+        launchers.add(new WeaponItem("Titan MPRL Compact", R.drawable.pm, WeaponType.LAUNCHER));
+        launchers.add(new WeaponItem("RPG-7", R.drawable.pm, WeaponType.LAUNCHER, DLCType.APEX));
+        launchers.add(new WeaponItem("RPG-42", R.drawable.pm, WeaponType.LAUNCHER));
+        return launchers;
     }
 
     @Override

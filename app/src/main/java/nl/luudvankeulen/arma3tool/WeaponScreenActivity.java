@@ -61,7 +61,7 @@ public class WeaponScreenActivity extends AppCompatActivity implements AdapterVi
 
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        listView.setAdapter(new WeaponsAdapter(getApplicationContext(), (WeaponType)spinner.getSelectedItem()));
+        listView.setAdapter(new WeaponsAdapter((WeaponType)spinner.getSelectedItem()));
     }
 
     @Override
