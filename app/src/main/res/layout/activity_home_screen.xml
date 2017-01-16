@@ -15,8 +15,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:scaleType="centerCrop"
-        android:src="@drawable/background"
-        android:layout_above="@+id/adView"/>
+        android:src="@drawable/background" />
 
     <TextView
         android:id="@+id/textViewTitle"

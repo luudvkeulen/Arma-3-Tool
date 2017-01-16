@@ -1,13 +1,14 @@
 package nl.luudvankeulen.arma3tool.enums;
 
 public enum WeaponType {
-    HANDGUN("Handgun"),
-    SMG("Submachine gun"),
-    RIFLE("Rifle"),
-    DMR("DMR"),
-    SNIPER("Sniper rifle"),
-    MACHINEGUN("Machine gun"),
-    LAUNCHER("Launcher");
+    NONE("All weapons"),
+    HANDGUN("Handguns"),
+    SMG("Submachine guns"),
+    RIFLE("Rifles"),
+    DMR("DMR's"),
+    SNIPER("Sniper rifles"),
+    MACHINEGUN("Machine guns"),
+    LAUNCHER("Launchers");
 
     private final String name;
 
