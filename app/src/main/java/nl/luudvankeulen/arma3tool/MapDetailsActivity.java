@@ -9,8 +9,12 @@ import android.widget.ProgressBar;
 
 import com.davemorrissey.labs.subscaleview.ImageSource;
 import com.davemorrissey.labs.subscaleview.SubsamplingScaleImageView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 
 public class MapDetailsActivity extends AppCompatActivity {
+
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +30,10 @@ public class MapDetailsActivity extends AppCompatActivity {
         SubsamplingScaleImageView subsamplingScaleImageView = (SubsamplingScaleImageView)findViewById(R.id.subsamplingScaleImageView);
         subsamplingScaleImageView.setImage(ImageSource.resource(pictureId));
         subsamplingScaleImageView.setMinimumDpi(80);
+
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

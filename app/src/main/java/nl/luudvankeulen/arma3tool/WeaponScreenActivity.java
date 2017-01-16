@@ -8,11 +8,15 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import nl.luudvankeulen.arma3tool.adapters.WeaponsAdapter;
 
 public class WeaponScreenActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +28,10 @@ public class WeaponScreenActivity extends AppCompatActivity implements AdapterVi
         listView = (ListView)findViewById(R.id.weapon_list);
         listView.setAdapter(new WeaponsAdapter(getApplicationContext()));
         listView.setOnItemClickListener(this);
+
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override

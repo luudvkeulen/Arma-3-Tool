@@ -8,12 +8,16 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import nl.luudvankeulen.arma3tool.adapters.MapsAdapter;
 import nl.luudvankeulen.arma3tool.models.MapItem;
 
 public class MapScreenActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
-    ListView list;
+    private AdView mAdView;
+    private ListView list;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +29,10 @@ public class MapScreenActivity extends AppCompatActivity implements AdapterView.
         list = (ListView)findViewById(R.id.maps_list);
         list.setAdapter(new MapsAdapter(getApplicationContext()));
         list.setOnItemClickListener(this);
+
+        mAdView = (AdView)findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
     @Override
