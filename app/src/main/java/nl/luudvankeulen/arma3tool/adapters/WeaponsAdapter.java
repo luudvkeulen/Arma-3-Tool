@@ -109,6 +109,7 @@ public class WeaponsAdapter extends BaseAdapter {
         rifles.add(new WeaponItem("SPAR-16", R.drawable.sparsixteen, WeaponType.RIFLE, DLCType.APEX));
         rifles.add(new WeaponItem("TRG 20", R.drawable.trgtwenty, WeaponType.RIFLE));
         rifles.add(new WeaponItem("TRG 21", R.drawable.trgtwentyone, WeaponType.RIFLE));
+        rifles.add(new WeaponItem("TRG 21 EGLM", R.drawable.trgtwentyonegl, WeaponType.RIFLE));
         rifles.add(new WeaponItem("Type 115", R.drawable.typeoneonefive, WeaponType.RIFLE, DLCType.APEX));
         return rifles;
     }
@@ -140,7 +141,7 @@ public class WeaponsAdapter extends BaseAdapter {
         LMGs.add(new WeaponItem("LIM-85", R.drawable.limeightyfive, WeaponType.MACHINEGUN, DLCType.APEX));
         LMGs.add(new WeaponItem("Mk200", R.drawable.mtwohundred, WeaponType.MACHINEGUN));
         LMGs.add(new WeaponItem("MX SW", R.drawable.mxsw, WeaponType.MACHINEGUN));
-        LMGs.add(new WeaponItem("NAVID", R.drawable.navid, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
+        LMGs.add(new WeaponItem("Navid", R.drawable.navid, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
         LMGs.add(new WeaponItem("SPMG", R.drawable.spmg, WeaponType.MACHINEGUN, DLCType.MARKSMEN));
         LMGs.add(new WeaponItem("Zafir", R.drawable.zafir, WeaponType.MACHINEGUN));
         return LMGs;
