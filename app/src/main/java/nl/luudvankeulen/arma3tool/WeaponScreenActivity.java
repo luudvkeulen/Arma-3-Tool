@@ -73,4 +73,12 @@ public class WeaponScreenActivity extends AppCompatActivity implements AdapterVi
     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mAdView != null) {
+            mAdView.destroy();
+        }
+    }
 }

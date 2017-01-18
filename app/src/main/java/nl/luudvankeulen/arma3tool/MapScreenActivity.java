@@ -48,4 +48,12 @@ public class MapScreenActivity extends AppCompatActivity implements AdapterView.
         intent.putExtra("id", ((MapItem)list.getItemAtPosition(i)).getPictureId());
         startActivity(intent);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mAdView != null) {
+            mAdView.destroy();
+        }
+    }
 }

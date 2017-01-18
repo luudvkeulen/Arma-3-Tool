@@ -41,4 +41,12 @@ public class MapDetailsActivity extends AppCompatActivity {
         finish();
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        if(mAdView != null) {
+            mAdView.destroy();
+        }
+    }
 }
